@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Mulher que Atravessou o Vale | Cartilha da Sabedoria Divina</title>
+<meta name="description" content="Você está carregando um peso que não tem nome? A história de Misake vai te mostrar que existe um caminho além das montanhas — e ele começa aqui.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#0a0906;
+  --bg2:#111009;
+  --bg3:#17140e;
+  --cream:#f0e8d8;
+  --cream2:#d9ccb5;
+  --cream3:#b8a98e;
+  --gold:#c9973a;
+  --gold2:#e8b84b;
+  --gold3:#f5d170;
+  --rust:#8b3a1f;
+  --div:#2a2318;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --body:'Crimson Pro',Georgia,serif;
+  --sans:'Josefin Sans',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--bg);
+  color:var(--cream);
+  font-family:var(--body);
+  font-size:clamp(19px,2.3vw,22px);
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* PROGRESS */
+#bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold3));width:0;z-index:400;transition:width .1s}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  padding:18px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,9,6,0);
+  transition:background .4s,backdrop-filter .4s,border-bottom .4s;
+}
+nav.scrolled{
+  background:rgba(10,9,6,0.95);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--div);
+}
+.nav-logo{
+  font-family:var(--sans);
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--cream3);
+}
+.nav-logo span{color:var(--gold)}
+.nav-cta{
+  font-family:var(--sans);
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--bg);background:var(--gold);
+  padding:10px 22px;text-decoration:none;
+  transition:background .2s;
+}
+.nav-cta:hover{background:var(--gold3)}
+
+/* HERO */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;object-fit:cover;
+  object-position:center 25%;
+  filter:brightness(.32) saturate(.6) sepia(.4);
+}
+.hero-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,9,6,1) 0%,rgba(10,9,6,.7) 40%,rgba(10,9,6,.1) 100%);
+}
+.hero-side{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(10,9,6,.7) 0%,transparent 60%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:820px;margin:0 auto;width:100%;
+  padding:0 36px 90px;
+}
+.hero-eyebrow{
+  font-family:var(--sans);
+  font-size:clamp(10px,1.4vw,12px);
+  letter-spacing:.38em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:28px;display:block;
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(2.8rem,7vw,5.2rem);
+  font-weight:300;line-height:1.08;
+  color:var(--cream);margin-bottom:28px;
+  letter-spacing:-.01em;
+}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero-sub{
+  font-family:var(--body);
+  font-size:clamp(18px,2.2vw,21px);
+  color:rgba(240,232,216,.65);
+  max-width:520px;margin-bottom:48px;line-height:1.7;
+}
+.btn-hero{
+  display:inline-block;
+  background:var(--gold);color:var(--bg);
+  font-family:var(--sans);
+  font-size:clamp(11px,1.5vw,13px);
+  font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  text-decoration:none;padding:20px 48px;
+  transition:background .2s,transform .15s;
+  border:none;cursor:pointer;
+}
+.btn-hero:hover{background:var(--gold3);transform:translateY(-2px)}
+.btn-note{
+  display:block;margin-top:14px;
+  font-family:var(--sans);font-size:11px;
+  letter-spacing:.1em;color:rgba(240,232,216,.3);
+}
+.hero-scroll{
+  position:absolute;bottom:36px;right:36px;z-index:2;
+  font-family:var(--sans);font-size:10px;
+  letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(240,232,216,.3);
+  writing-mode:vertical-rl;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-scroll::after{
+  content:'';width:1px;height:48px;
+  background:linear-gradient(to bottom,var(--gold),transparent);
+}
+
+/* EPIGRAPH */
+.epigraph{
+  text-align:center;padding:72px 24px;
+  border-bottom:1px solid var(--div);
+  background:var(--bg2);
+}
+.epigraph p{
+  font-family:var(--serif);
+  font-size:clamp(1.3rem,3.2vw,1.75rem);
+  font-style:italic;color:var(--gold2);
+  max-width:640px;margin:0 auto 16px;line-height:1.6;
+  font-weight:300;
+}
+.epigraph cite{
+  font-family:var(--sans);
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--cream3);
+}
+
+/* WRAP */
+.wrap{max-width:780px;margin:0 auto;padding:0 28px}
+
+/* SECTION LABEL */
+.s-label{
+  font-family:var(--sans);
+  font-size:10px;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:14px;
+  display:flex;align-items:center;gap:14px;
+}
+.s-label::after{content:'';flex:1;height:1px;background:var(--div)}
+
+/* CHAPTER TITLE */
+.ch-title{
+  font-family:var(--serif);
+  font-size:clamp(2rem,4.8vw,3rem);
+  font-weight:300;line-height:1.18;
+  color:var(--cream);margin-bottom:36px;letter-spacing:-.01em;
+}
+.ch-title em{font-style:italic;color:var(--gold2)}
+
+/* BODY TEXT */
+.prose p{
+  font-size:clamp(18px,2.2vw,21px);
+  color:rgba(240,232,216,.84);
+  margin-bottom:26px;line-height:1.88;
+}
+.prose p strong{color:var(--gold2);font-weight:500}
+.prose p em{font-style:italic;color:rgba(240,232,216,.95)}
+
+/* FULL IMAGE */
+.full-img{margin:52px 0;overflow:hidden;position:relative}
+.full-img img{
+  width:100%;height:auto;display:block;
+  filter:brightness(.78) saturate(.75) sepia(.25);
+  transition:transform .7s ease,filter .5s;
+}
+.full-img:hover img{transform:scale(1.015);filter:brightness(.88) saturate(.88) sepia(.15)}
+.full-img figcaption{
+  font-family:var(--sans);font-size:11px;
+  letter-spacing:.12em;color:var(--cream3);
+  margin-top:12px;font-style:italic;
+  text-align:center;
+}
+
+/* PULL QUOTE */
+.pull{
+  margin:56px 0;padding:40px 44px;
+  border-left:2px solid var(--gold);
+  background:linear-gradient(135deg,var(--bg3) 0%,var(--bg2) 100%);
+  position:relative;
+}
+.pull::before{
+  content:'\201C';
+  font-family:var(--serif);font-size:7rem;
+  color:var(--gold);opacity:.15;
+  position:absolute;top:-20px;left:20px;
+  line-height:1;pointer-events:none;
+}
+.pull p{
+  font-family:var(--serif);
+  font-size:clamp(1.2rem,2.8vw,1.5rem);
+  font-style:italic;color:var(--gold2);
+  line-height:1.6;margin:0;font-weight:300;
+}
+
+/* DIVIDER VISUAL */
+.v-divider{
+  display:flex;align-items:center;justify-content:center;
+  gap:20px;margin:72px 0;padding:0 28px;
+}
+.v-divider::before,.v-divider::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,var(--div),transparent);
+}
+.v-divider-inner{
+  display:flex;align-items:center;gap:12px;
+}
+.v-divider span{
+  font-family:var(--sans);font-size:9px;
+  letter-spacing:.35em;text-transform:uppercase;
+  color:var(--cream3);white-space:nowrap;
+}
+.v-divider-dot{width:4px;height:4px;background:var(--gold);border-radius:50%}
+
+/* CHAPTER SECTION */
+.chapter{padding:80px 0 20px}
+
+/* SPLIT IMAGE */
+.split{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;margin:52px 0;
+  align-items:center;
+}
+.split.reverse{direction:rtl}
+.split.reverse>*{direction:ltr}
+.split-img{overflow:hidden;height:480px}
+.split-img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.72) saturate(.7) sepia(.3);
+  transition:transform .7s ease;
+}
+.split:hover .split-img img{transform:scale(1.03)}
+.split-text{
+  padding:52px 44px;
+  background:var(--bg3);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.split-text .s-label{margin-bottom:18px}
+.split-text h3{
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,3vw,2rem);
+  font-weight:300;color:var(--cream);
+  margin-bottom:20px;line-height:1.25;letter-spacing:-.01em;
+}
+.split-text h3 em{font-style:italic;color:var(--gold2)}
+.split-text p{
+  font-size:clamp(16px,2vw,19px);
+  color:rgba(240,232,216,.75);
+  line-height:1.82;margin-bottom:0;
+}
+@media(max-width:680px){
+  .split{grid-template-columns:1fr}
+  .split-img{height:260px}
+  .split.reverse{direction:ltr}
+  .split-text{padding:32px 24px}
+}
+
+/* NUMBERED LESSON */
+.lessons{margin:20px 0}
+.lesson{
+  display:grid;grid-template-columns:72px 1fr;
+  gap:0;border-top:1px solid var(--div);
+  padding:48px 0;align-items:start;
+}
+.lesson:last-child{border-bottom:1px solid var(--div)}
+.lesson-n{
+  font-family:var(--serif);
+  font-size:4.5rem;font-weight:300;
+  color:var(--div);line-height:1;
+  padding-top:4px;user-select:none;
+  letter-spacing:-.04em;
+}
+.lesson-body{}
+.lesson-body h3{
+  font-family:var(--serif);
+  font-size:clamp(1.28rem,2.8vw,1.65rem);
+  font-weight:400;color:var(--cream);
+  margin-bottom:16px;line-height:1.3;
+}
+.lesson-body p{
+  font-size:clamp(17px,2.1vw,20px);
+  color:rgba(240,232,216,.78);
+  margin-bottom:18px;line-height:1.85;
+}
+.lesson-img{
+  margin:20px 0;overflow:hidden;
+  height:320px;
+}
+.lesson-img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.72) saturate(.68) sepia(.3);
+  transition:transform .6s;
+}
+.lesson:hover .lesson-img img{transform:scale(1.02)}
+.practical{
+  margin-top:20px;padding:20px 22px;
+  background:rgba(201,151,58,.07);
+  border-left:2px solid var(--gold);
+}
+.practical strong{
+  font-family:var(--sans);
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:8px;
+}
+.practical p{
+  font-size:clamp(15px,1.9vw,17px)!important;
+  color:rgba(240,232,216,.65)!important;
+  font-style:italic;margin-bottom:0!important;
+}
+@media(max-width:560px){
+  .lesson{grid-template-columns:1fr}
+  .lesson-n{font-size:2.8rem;margin-bottom:8px}
+}
+
+/* WIDE IMAGE */
+.wide-img{
+  width:100vw;margin-left:50%;transform:translateX(-50%);
+  height:520px;overflow:hidden;position:relative;
+  margin-top:0;margin-bottom:0;
+}
+.wide-img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.45) saturate(.6) sepia(.4);
+}
+.wide-img-text{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;text-align:center;
+  padding:40px;
+}
+.wide-img-text p{
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,4vw,2.6rem);
+  font-style:italic;font-weight:300;
+  color:var(--gold2);max-width:700px;line-height:1.45;
+  margin-bottom:12px;
+}
+.wide-img-text cite{
+  font-family:var(--sans);font-size:11px;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(240,232,216,.45);
+}
+
+/* REFLECTIONS */
+.reflect-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1px;background:var(--div);
+  margin:52px 0;
+}
+.reflect-item{
+  background:var(--bg3);
+  padding:36px 32px;
+  display:flex;gap:18px;align-items:flex-start;
+}
+.reflect-num{
+  font-family:var(--serif);
+  font-size:2.2rem;font-weight:300;
+  color:rgba(201,151,58,.25);line-height:1;
+  flex-shrink:0;
+}
+.reflect-text{
+  font-size:clamp(16px,2vw,18px);
+  color:rgba(240,232,216,.72);line-height:1.72;
+}
+@media(max-width:600px){
+  .reflect-grid{grid-template-columns:1fr}
+}
+
+/* CTA MID */
+.cta-mid{
+  text-align:center;padding:72px 28px;
+  background:var(--bg2);
+  border-top:1px solid var(--div);
+  border-bottom:1px solid var(--div);
+  margin:80px 0;
+}
+.cta-mid p{
+  font-family:var(--serif);
+  font-size:clamp(1.1rem,2.6vw,1.4rem);
+  font-style:italic;color:rgba(240,232,216,.7);
+  max-width:560px;margin:0 auto 32px;line-height:1.65;
+}
+.btn-mid{
+  display:inline-block;
+  background:var(--gold);color:var(--bg);
+  font-family:var(--sans);
+  font-size:clamp(11px,1.5vw,13px);
+  font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;padding:18px 44px;
+  transition:background .2s;
+}
+.btn-mid:hover{background:var(--gold3)}
+
+/* COMPARISON */
+.compare{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1px;background:var(--div);
+  margin:44px 0;
+}
+.cmp-card{padding:32px 28px;background:var(--bg3)}
+.cmp-card.yes{background:rgba(201,151,58,.06);border-top:2px solid var(--gold)}
+.cmp-card h4{
+  font-family:var(--sans);
+  font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+  margin-bottom:16px;
+}
+.cmp-card:not(.yes) h4{color:var(--cream3)}
+.cmp-card.yes h4{color:var(--gold)}
+.cmp-card p{
+  font-size:clamp(15px,1.9vw,17px);
+  color:rgba(240,232,216,.62);line-height:1.72;
+}
+@media(max-width:540px){.compare{grid-template-columns:1fr}}
+
+/* FINAL CTA */
+.final-cta{
+  background:var(--bg2);
+  border-top:1px solid var(--div);
+  padding:96px 28px;text-align:center;
+  margin-top:80px;
+}
+.final-cta .kicker{
+  font-family:var(--sans);
+  font-size:10px;letter-spacing:.38em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:24px;display:block;
+}
+.final-cta h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:300;line-height:1.18;
+  max-width:680px;margin:0 auto 20px;
+  color:var(--cream);letter-spacing:-.01em;
+}
+.final-cta h2 em{font-style:italic;color:var(--gold2)}
+.final-cta>p{
+  font-family:var(--body);
+  font-size:clamp(17px,2.1vw,20px);
+  color:rgba(240,232,216,.55);
+  max-width:520px;margin:0 auto 52px;line-height:1.72;
+}
+.product-box{
+  max-width:620px;margin:0 auto 52px;
+  background:var(--bg3);
+  border:1px solid var(--div);
+  padding:44px 36px;text-align:left;
+}
+.product-box h3{
+  font-family:var(--serif);
+  font-size:clamp(1.2rem,2.6vw,1.5rem);
+  font-weight:300;color:var(--cream);margin-bottom:6px;
+}
+.product-box .sub{
+  font-family:var(--sans);font-size:11px;
+  letter-spacing:.12em;color:var(--cream3);
+  margin-bottom:30px;
+}
+.product-items{list-style:none}
+.product-items li{
+  font-family:var(--body);
+  font-size:clamp(15px,1.9vw,17px);
+  color:rgba(240,232,216,.7);
+  padding:14px 0;border-bottom:1px solid var(--div);
+  display:flex;gap:14px;align-items:flex-start;line-height:1.62;
+}
+.product-items li:last-child{border-bottom:none}
+.product-items li .icon{color:var(--gold);flex-shrink:0;margin-top:3px;font-size:.9em}
+.product-items li strong{color:var(--cream);font-weight:500}
+.btn-final{
+  display:inline-block;
+  background:var(--gold);color:var(--bg);
+  font-family:var(--sans);
+  font-size:clamp(12px,1.6vw,14px);
+  font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;padding:24px 60px;
+  transition:background .2s,transform .15s;
+  margin-bottom:20px;display:block;max-width:420px;margin:0 auto 20px;
+  text-align:center;
+}
+.btn-final:hover{background:var(--gold3);transform:translateY(-2px)}
+.guarantee{
+  font-family:var(--sans);font-size:11px;
+  letter-spacing:.08em;color:rgba(240,232,216,.28);
+  margin-top:18px;
+}
+
+/* FOOTER */
+footer{
+  background:#050400;
+  border-top:1px solid var(--div);
+  text-align:center;padding:48px 24px;
+  font-family:var(--sans);
+  font-size:11px;letter-spacing:.08em;
+  color:rgba(240,232,216,.22);line-height:2.2;
+}
+footer a{color:var(--gold);text-decoration:none}
+
+/* REVEAL ANIM */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* MOBILE */
+@media(max-width:560px){
+  .hero h1{font-size:2.4rem}
+  .pull{padding:28px 22px;margin:40px 0}
+  .chapter{padding:56px 0 12px}
+  .wide-img{height:360px}
+  .product-box{padding:30px 20px}
+}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<nav id="nav">
+  <div class="nav-logo">Sabedoria Divina &nbsp;·&nbsp; <span>Decida com Paz</span></div>
+  <a href="#solucao" class="nav-cta">Quero a Cartilha →</a>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1800&q=80" alt="Deserto ao amanhecer com luz dourada">
+  <div class="hero-grad"></div>
+  <div class="hero-side"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Uma história que foi escrita sobre você</span>
+    <h1>A Mulher que<br>Atravessou o <em>Vale</em></h1>
+    <p class="hero-sub">Você está carregando um peso que não tem nome — espiritual, financeiro, profissional. Essa história vai te mostrar que existe um caminho do outro lado das montanhas.</p>
+    <a href="#solucao" class="btn-hero">Quero Clareza Agora →</a>
+    <span class="btn-note">Acesso imediato · Garantia incondicional de 7 dias</span>
+  </div>
+  <div class="hero-scroll">Role para ler</div>
+</section>
+
+<!-- ═══════════ EPIGRAPH ═══════════ -->
+<div class="epigraph">
+  <p>"Pare o que você está fazendo por alguns minutos. Não porque vou te vender algo agora. Mas porque o que você está prestes a ler pode ser a história que você nunca soube que precisava ouvir."</p>
+  <cite>A Jornada de Misake</cite>
+</div>
+
+<!-- ═══════════ I — NOITE ═══════════ -->
+<div class="chapter wrap reveal">
+  <span class="s-label">I</span>
+  <h2 class="ch-title">A Noite em que<br>o <em>Chão Sumiu</em></h2>
+  <div class="prose">
+    <p>Era uma terça-feira comum.</p>
+    <p>Misake estava sentada na beira da cama às 2h da manhã, com a tela do celular iluminando o rosto, olhando para o saldo da conta. Não era a primeira vez. Mas naquela noite foi diferente. Não foi o número que a assustou. Foi o que ela sentiu ao olhar para ele: <strong>nada.</strong></p>
+    <p>Nenhuma raiva. Nenhuma esperança. Nenhum plano. Só um vazio que ela há muito tentava preencher com trabalho, com atividade, com barulho.</p>
+  </div>
+</div>
+
+<figure class="full-img wrap reveal">
+  <img src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=1200&q=80" alt="Mulher sozinha na escuridão com luz suave ao fundo">
+  <figcaption>A fadiga de quem carrega uma vida que não parece mais sua.</figcaption>
+</figure>
+
+<div class="wrap reveal">
+  <div class="prose">
+    <p>O marido dormia ao lado. Os filhos dormiam no quarto ao lado. A casa estava quieta. E Misake nunca se sentiu tão sozinha na vida.</p>
+    <p>Ela foi até o banheiro, abriu a torneira para ninguém ouvir, e chorou. Um choro que não tinha nome. Não era tristeza. Era exaustão de uma espécie que médico nenhum sabe diagnosticar — a fadiga de quem carrega uma vida que não parece mais sua.</p>
+  </div>
+  <div class="pull">
+    <p>Você já chorou esse tipo de choro? Aquele que vem de um lugar tão fundo que você nem sabe mais o que está doendo — só que dói tudo?</p>
+  </div>
+  <div class="prose">
+    <p>Misake conhecia esse lugar. Ela havia montado escritório lá.</p>
+  </div>
+</div>
+
+<!-- ═══════════ DIVIDER ═══════════ -->
+<div class="v-divider">
+  <div class="v-divider-inner">
+    <div class="v-divider-dot"></div>
+    <span>O peso que ninguém vê</span>
+    <div class="v-divider-dot"></div>
+  </div>
+</div>
+
+<!-- ═══════════ II — PESO ═══════════ -->
+<div class="split reveal">
+  <div class="split-img">
+    <img src="https://images.unsplash.com/photo-1523406004035-49fdb3bfcf7f?auto=format&fit=crop&w=800&q=80" alt="Silhueta de pessoa olhando para o horizonte com peso nos ombros">
+  </div>
+  <div class="split-text">
+    <span class="s-label">II</span>
+    <h3>O Peso que<br><em>Ninguém Vê</em></h3>
+    <p>Por fora, a vida de Misake tinha um aspecto razoável. Ela trabalhava. Ela cuidava de tudo. Ela sorria nas fotos, comparecia nas reuniões, respondia as mensagens. Ela era funcional — como uma máquina que opera, mas não vive.</p>
+  </div>
+</div>
+
+<div class="wrap reveal">
+  <div class="prose">
+    <p>Espiritualmente, ela sentia que Deus havia se mudado sem avisar o endereço novo. Ela orava, mas as palavras pareciam bater no teto e voltar. Ia à igreja, ouvia o sermão, até chorava na música de louvor — mas saía do mesmo jeito que entrou.</p>
+    <p>Profissionalmente, estava num limbo doloroso. Talento de sobra, oportunidade de menos. Ou talvez oportunidade de sobra e coragem de menos. Havia tentado aquele projeto. Aquele curso. Aquela parceria. Cada tentativa terminava da mesma forma.</p>
+    <p>Financeiramente, nem vamos entrar em detalhes. Você provavelmente já sabe como essa história termina. Ou melhor: como ela não termina. Ela se repete.</p>
+  </div>
+  <div class="pull">
+    <p>Quando você é a pessoa que "tem que ser forte", você perde o direito de desmoronar. Você vira pilar. E pilar não pede colo.</p>
+  </div>
+</div>
+
+<!-- ═══════════ WIDE QUOTE — JESUS WILDERNESS ═══════════ -->
+<div class="wide-img reveal">
+  <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1800&q=80" alt="Paisagem bíblica de deserto com luz divina">
+  <div class="wide-img-text">
+    <p>"Antes de qualquer grande missão, há um deserto. Antes de qualquer resposta, há silêncio."</p>
+    <cite>A pedagogia do Reino</cite>
+  </div>
+</div>
+
+<!-- ═══════════ III — LENDA ═══════════ -->
+<div class="chapter wrap reveal">
+  <span class="s-label">III</span>
+  <h2 class="ch-title">A Lenda do<br><em>Outro Lado</em></h2>
+  <div class="prose">
+    <p>Foi numa tarde de sábado que Misake ouviu pela primeira vez sobre o Vale.</p>
+    <p>Uma conhecida mencionou de passagem, numa roda de conversa que Misake estava apenas observando:</p>
+  </div>
+  <div class="pull">
+    <p>"Dizem que existe um lugar além daquelas montanhas. Onde as pessoas chegam quebradas e voltam inteiras. Mas quase ninguém consegue chegar lá de verdade."</p>
+  </div>
+  <div class="prose">
+    <p>Misake não participou da conversa. Mas guardou aquilo.</p>
+    <p>A maioria das pessoas que consultou disse: <em>"Não vai não. É longe demais. É perigoso. Você tem filhos. Você tem responsabilidade."</em></p>
+    <p>E ela ouviu tudo isso. E foi assim mesmo. Porque quando você chegou no ponto em que Misake estava, a voz do risco para de competir com a voz do desespero. Tudo que havia tentado antes era movimento. O que ela precisava era de transformação.</p>
+  </div>
+</div>
+
+<figure class="full-img wrap reveal">
+  <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80" alt="Jesus e discípulos caminhando por estrada no deserto bíblico">
+  <figcaption>Toda grande jornada começa onde a lógica humana termina.</figcaption>
+</figure>
+
+<!-- ═══════════ DIVIDER ═══════════ -->
+<div class="v-divider">
+  <div class="v-divider-inner">
+    <div class="v-divider-dot"></div>
+    <span>A partida que ninguém entendeu</span>
+    <div class="v-divider-dot"></div>
+  </div>
+</div>
+
+<!-- ═══════════ IV — PARTIDA ═══════════ -->
+<div class="split reverse reveal">
+  <div class="split-img">
+    <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=800&q=80" alt="Estrada solitária ao amanhecer na direção das montanhas">
+  </div>
+  <div class="split-text">
+    <span class="s-label">IV</span>
+    <h3>A Partida que<br><em>Ninguém Entendeu</em></h3>
+    <p>Ela não fez uma festa de despedida. Deixou uma carta. E numa manhã de quinta-feira, enquanto a cidade ainda dormia, Misake saiu. Sem fanfarra. Sem post. Só ela, a mochila, e uma direção vaga apontando para as montanhas que todo mundo dizia que não valiam a pena.</p>
+  </div>
+</div>
+
+<div class="wrap reveal">
+  <div class="prose">
+    <p>As primeiras horas foram as mais fáceis. O coração estava cheio daquela adrenalina de quem decide de verdade pela primeira vez em muito tempo. Misake caminhava rápido e sentia algo parecido com esperança.</p>
+    <p>Mas a esperança, quando não tem raiz, dura até o primeiro obstáculo. E o primeiro obstáculo chegou antes do almoço — uma parede de pedras bloqueando o caminho planejado.</p>
+  </div>
+  <div class="pull">
+    <p>Você sabe o que é ficar parado diante de uma parede que não estava no plano. Não estou falando de pedras. Estou falando daquele momento em que você começa uma mudança com tudo — e na primeira semana já aparece algo que você não previu.</p>
+  </div>
+  <div class="prose">
+    <p>Misake escalou. Rasgou a palma da mão direita. <strong>Mas escalou.</strong></p>
+  </div>
+</div>
+
+<!-- ═══════════ WIDE IMAGE — DISCIPLES ═══════════ -->
+<div class="wide-img reveal">
+  <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1800&q=80" alt="Luz divina sobre caminho rochoso nas montanhas bíblicas">
+  <div class="wide-img-text">
+    <p>"Pedro saiu do barco. Pedro afundou. Mas Pedro foi o único que andou sobre as águas."</p>
+    <cite>Mateus 14:29</cite>
+  </div>
+</div>
+
+<!-- ═══════════ V — O VALE ═══════════ -->
+<div class="chapter wrap reveal">
+  <span class="s-label">V</span>
+  <h2 class="ch-title">O <em>Vale</em></h2>
+  <div class="prose">
+    <p>Ninguém havia descrito o Vale com precisão. E Misake entendeu por quê quando chegou lá.</p>
+    <p>Não é um lugar de paisagem bonita. Não é um spa espiritual no topo da montanha. O Vale da Morte é exatamente o que o nome diz: um lugar árido, quente, sem sombra, sem nada que conforte os olhos ou o corpo.</p>
+    <p>É um lugar que testa se você veio de verdade — ou veio de turismo.</p>
+  </div>
+</div>
+
+<figure class="full-img wrap reveal">
+  <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1200&q=80" alt="Vale árido e vasto com luz dramática ao pôr do sol">
+  <figcaption>No Vale, não tem como fingir que está bem.</figcaption>
+</figure>
+
+<div class="wrap reveal">
+  <div class="prose">
+    <p>Aqui, não tem como fingir que está bem. Não tem sinal de celular para se distrair. Não tem trabalho urgente para se esconder atrás. Não tem ninguém para representar. No Vale, você fica só com o que realmente é — sem as armaduras que coloca antes de sair de casa toda manhã.</p>
+    <p>E o que Misake encontrou quando tirou todas as armaduras?</p>
+    <p>Uma mulher exausta que <strong>ainda acreditava.</strong></p>
+    <p>No fundo havia uma brasa. Pequena, quase apagada, mas viva. E Misake ficou olhando para ela por muito tempo, maravilhada com o fato de que, depois de tudo, alguma coisa dentro dela ainda se recusava a apagar.</p>
+  </div>
+</div>
+
+<!-- ═══════════ DIVIDER ═══════════ -->
+<div class="v-divider">
+  <div class="v-divider-inner">
+    <div class="v-divider-dot"></div>
+    <span>A noite mais longa</span>
+    <div class="v-divider-dot"></div>
+  </div>
+</div>
+
+<!-- ═══════════ VI — NOITE NO VALE ═══════════ -->
+<div class="split reveal">
+  <div class="split-img">
+    <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&w=800&q=80" alt="Céu estrelado sobre deserto silencioso">
+  </div>
+  <div class="split-text">
+    <span class="s-label">VI</span>
+    <h3>A Noite<br><em>Mais Longa</em></h3>
+    <p>A primeira noite no Vale foi a mais dura. O frio que vem depois do calor extremo é outro tipo de frio — é simbólico. É a noite que cai depois que você admite para si mesmo que não sabe o que está fazendo.</p>
+  </div>
+</div>
+
+<div class="wrap reveal">
+  <div class="prose">
+    <p>Misake ficou acordada olhando para o céu. Ela começou a conversar com Deus de um jeito que nunca havia conversado. Não a oração organizada, de joelhos, com as palavras certas. <em>A oração suja</em>, daquela que começa com "Eu não entendo nada", continua com "Onde o Senhor está?", e termina com "Me ajuda, por favor, porque eu não tenho mais nada."</p>
+    <p>E aí aconteceu algo que ela não sabe descrever.</p>
+    <p>Não foi um clarão. Não foi uma voz do céu. Foi algo muito mais simples e, ao mesmo tempo, muito mais avassalador:</p>
+  </div>
+  <div class="pull">
+    <p>Uma paz que não fazia sentido nenhum dadas as circunstâncias. O problema ainda estava lá. Mas algo havia mudado num lugar que ela não sabia nem que existia.</p>
+  </div>
+</div>
+
+<!-- ═══════════ WIDE IMAGE — JESUS PRAYING ═══════════ -->
+<div class="wide-img reveal">
+  <img src="https://images.unsplash.com/photo-1533000759938-aa0ba70beceb?auto=format&fit=crop&w=1800&q=80" alt="Luz sagrada sobre montanhas com silhueta em oração">
+  <div class="wide-img-text">
+    <p>"Mesmo no Getsêmani — a noite mais dura — o Pai não abandonou o Filho. E não vai te abandonar."</p>
+    <cite>Lucas 22:43</cite>
+  </div>
+</div>
+
+<!-- ═══════════ VII — LIÇÕES DO VALE ═══════════ -->
+<div class="chapter wrap reveal">
+  <span class="s-label">VII</span>
+  <h2 class="ch-title">O que o Vale Ensina<br>que o <em>Conforto Nunca Ensinaria</em></h2>
+  <div class="prose">
+    <p>Nos dias seguintes, Misake caminhou em silêncio. Não o silêncio de quem não tem nada a dizer. O silêncio de quem finalmente parou de tentar controlar a conversa.</p>
+    <p>Com essa clareza vieram perguntas que ela havia evitado por anos — porque a resposta tinha custo:</p>
+  </div>
+</div>
+
+<div class="wrap reveal">
+  <div class="reflect-grid">
+    <div class="reflect-item">
+      <div class="reflect-num">01</div>
+      <div class="reflect-text">O que eu realmente quero — ou o que eu acho que deveria querer?</div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-num">02</div>
+      <div class="reflect-text">Quais decisões estou adiando por medo do julgamento dos outros?</div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-num">03</div>
+      <div class="reflect-text">O que chamei de prudência que era, na verdade, covardia?</div>
+    </div>
+    <div class="reflect-item">
+      <div class="reflect-num">04</div>
+      <div class="reflect-text">Onde busco aprovação de quem não tem autoridade sobre meu propósito?</div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>O Vale não deu essas respostas a ela. O Vale simplesmente a colocou num ambiente onde não havia mais ruído suficiente para se esconder delas.</p>
+  </div>
+</div>
+
+<!-- ═══════════ CTA MEIO ═══════════ -->
+<div class="cta-mid reveal">
+  <p>Você não precisa ir a um vale para encontrar essa clareza. Mas precisa de um método para criar o silêncio que ela encontrou lá.</p>
+  <a href="#solucao" class="btn-mid">Quero a Cartilha Agora →</a>
+</div>
+
+<!-- ═══════════ VIII — TRAVESSIA ═══════════ -->
+<div class="split reverse reveal">
+  <div class="split-img">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Caminho de luz no outro lado da montanha ao amanhecer">
+  </div>
+  <div class="split-text">
+    <span class="s-label">VIII</span>
+    <h3>A <em>Travessia</em></h3>
+    <p>No sétimo dia, Misake chegou ao outro lado. Com os pés doendo, a mochila mais leve — ela havia descartado peso pelo caminho, tanto o físico quanto o outro tipo.</p>
+  </div>
+</div>
+
+<div class="wrap reveal">
+  <div class="prose">
+    <p>As pessoas que a conheciam disseram, sem conseguir nomear o que viram:</p>
+    <p><em>"Você está diferente."</em></p>
+    <p><em>"O que aconteceu com você?"</em></p>
+    <p><em>"Sei lá. Você parece mais... você."</em></p>
+    <p>O que mudou? Não foi o vale. O vale foi só o contexto. O que mudou foi que Misake passou sete dias sem poder fingir. E quando você fica sete dias sem poder fingir, você descobre quem você é por baixo de tudo que construiu para sobreviver.</p>
+  </div>
+  <div class="compare">
+    <div class="cmp-card">
+      <h4>Antes do Vale</h4>
+      <p>Decisões tomadas por medo, por aprovação alheia, por alívio imediato da tensão. Movimento sem direção. Armaduras que pesam mais do que protegem.</p>
+    </div>
+    <div class="cmp-card yes">
+      <h4>Depois do Vale</h4>
+      <p>A diferença entre uma decisão que vem do medo e uma que vem de convicção. O ponto de onde você decide muda — e isso muda o resultado.</p>
+    </div>
+  </div>
+  <div class="pull">
+    <p>Ela voltou sabendo que a paz inexplicável é uma bússola mais confiável do que qualquer planilha. Isso não resolve tudo automaticamente. Mas muda o ponto de onde você toma as decisões que resolvem tudo.</p>
+  </div>
+</div>
+
+<!-- ═══════════ WIDE IMAGE — DISCIPLES ON ROAD ═══════════ -->
+<div class="wide-img reveal">
+  <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=80" alt="Estrada de montanha com luz sagrada ao amanhecer">
+  <div class="wide-img-text">
+    <p>"A caminho de Emaús, eles não reconheceram quem caminhava com eles — até o momento certo."</p>
+    <cite>Lucas 24:15</cite>
+  </div>
+</div>
+
+<!-- ═══════════ IX — PARA VOCÊ ═══════════ -->
+<div class="chapter wrap reveal">
+  <span class="s-label">IX</span>
+  <h2 class="ch-title">Por Que Estou<br><em>te Contando Isso</em></h2>
+  <div class="prose">
+    <p>Misake é real. Talvez não com esse nome. Talvez não com exatamente esse vale. Mas você conhece alguém assim. Ou você <em>é</em> alguém assim.</p>
+    <p>Você está carregando um peso que não é só financeiro, não é só profissional, não é só espiritual — é os três ao mesmo tempo, e eles estão tão entrelaçados que você não sabe mais onde um começa e o outro termina.</p>
+    <p>Você já tentou várias coisas. Algumas funcionaram por um tempo. Mas o peso volta. Porque o problema não é a falta de informação. <strong>O problema é que ninguém te ensinou a ouvir a frequência certa antes de tomar a decisão certa.</strong></p>
+  </div>
+</div>
+
+<figure class="full-img wrap reveal">
+  <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80" alt="Jesus e seus discípulos em cena bíblica contemplativa">
+  <figcaption>O caminho que Misake atravessou a pé, você pode começar a atravessar ainda esta semana.</figcaption>
+</figure>
+
+<div class="wrap reveal">
+  <div class="pull">
+    <p>A questão não é se você vai tomar aquela decisão que está adiando. A questão é: você vai tomá-la de dentro do medo — ou de dentro da paz?</p>
+  </div>
+</div>
+
+<!-- ═══════════ DIVIDER ═══════════ -->
+<div class="v-divider">
+  <div class="v-divider-inner">
+    <div class="v-divider-dot"></div>
+    <span>O método que ela trouxe de volta</span>
+    <div class="v-divider-dot"></div>
+  </div>
+</div>
+
+<!-- ═══════════ X — OS 5 PASSOS ═══════════ -->
+<div class="chapter wrap reveal">
+  <span class="s-label">X · O Método</span>
+  <h2 class="ch-title">Os 5 Passos que<br>Misake <em>Trouxe de Volta</em></h2>
+  <div class="prose">
+    <p>Cada etapa da caminhada se tornou um passo prático aplicável agora — na segunda de manhã, antes da reunião difícil, na noite em que a conta não fecha.</p>
+  </div>
+
+  <div class="lessons">
+
+    <div class="lesson">
+      <div class="lesson-n">01</div>
+      <div class="lesson-body">
+        <h3>O Isolamento do Ruído</h3>
+        <div class="lesson-img">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Pessoa em silêncio e oração no deserto ao amanhecer">
+        </div>
+        <p>No Vale, Misake não tinha com quem fingir. Você não precisa ir a lugar nenhum — mas precisa criar esse silêncio intencionalmente. Reserve espaço para que a voz da paz seja ouvida por cima do barulho das cobranças externas.</p>
+        <div class="practical">
+          <strong>Na prática</strong>
+          <p>15 minutos de silêncio absoluto. Escreva todas as vozes que estão te cobrando. O objetivo é esvaziar o entulho mental para que a direção encontre espaço para ressoar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-n">02</div>
+      <div class="lesson-body">
+        <h3>O Filtro da Pureza</h3>
+        <div class="lesson-img">
+          <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80" alt="Luz atravessando nuvens sobre paisagem bíblica">
+        </div>
+        <p>Misake descobriu que havia tomado decisões baseadas no que parecia certo para os outros verem — não no que era certo para ela construir. Aprender a identificar quando uma decisão nasce do valor real muda completamente o resultado.</p>
+        <div class="practical">
+          <strong>Na prática</strong>
+          <p>Esta decisão exige que eu comprometa algum princípio inegociável? Se há desonestidade ou quebra de caráter, a resposta é não — independente do quanto pareça vantajoso.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-n">03</div>
+      <div class="lesson-body">
+        <h3>Paz versus Alívio</h3>
+        <div class="lesson-img">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Lago calmo ao amanhecer com reflexo dourado de montanhas">
+        </div>
+        <p>A paz que Misake sentiu naquela noite no Vale não foi a ausência do problema. Foi a presença de algo maior. Aprender a diferença entre o alívio emocional e a paz espiritual é a habilidade mais valiosa que existe para quem precisa decidir.</p>
+        <div class="practical">
+          <strong>Na prática</strong>
+          <p>Se o desejo de decidir vem da vontade de "se livrar do problema", pare. Essa decisão volta com o dobro de força dois dias depois. Só avance quando sentir o assentamento — não o alívio.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-n">04</div>
+      <div class="lesson-body">
+        <h3>A Blindagem das Vozes</h3>
+        <div class="lesson-img">
+          <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=800&q=80" alt="Discípulos em cena bíblica de conversa e discernimento">
+        </div>
+        <p>No caminho de volta, Misake sabia exatamente quais vozes tinham autoridade para falar na sua vida. Essa distinção protege o processo de decisão de ser contaminado pela projeção dos medos alheios.</p>
+        <div class="practical">
+          <strong>Na prática</strong>
+          <p>Identifique 3 pessoas com frutos reais para falar na sua vida. Descarte o resto com gentileza. Se um conselho gera medo e confusão — ele não vem de Deus.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <div class="lesson-n">05</div>
+      <div class="lesson-body">
+        <h3>A Entrega do Resultado</h3>
+        <div class="lesson-img">
+          <img src="https://images.unsplash.com/photo-1433477155337-9aea4e790195?auto=format&fit=crop&w=800&q=80" alt="Mãos abertas ao céu em postura de entrega e fé">
+        </div>
+        <p>Misake partiu sem garantias. E foi exatamente isso que abriu o caminho. Soltar o controle não é fraqueza — é a decisão mais corajosa que um ser humano pode tomar. E é o que transforma o desespero em confiança.</p>
+        <div class="practical">
+          <strong>Na prática</strong>
+          <p>"Senhor, entrego as consequências desta escolha nas Tuas mãos. Se eu errar, o Senhor é poderoso para me redirecionar." Dê apenas o próximo passo. Não os próximos 5 anos. O próximo passo.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════ WIDE IMAGE — FINAL DAWN ═══════════ -->
+<div class="wide-img reveal">
+  <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=80" alt="Amanhecer magnífico sobre vale com luz dourada">
+  <div class="wide-img-text">
+    <p>"Sua pior fase não é o seu último capítulo. A dor refina — não apaga."</p>
+    <cite>A Jornada de Misake</cite>
+  </div>
+</div>
+
+<!-- ═══════════ XI — PARA VOCÊ FINAL ═══════════ -->
+<div class="chapter wrap reveal">
+  <span class="s-label">Para você</span>
+  <h2 class="ch-title">A Sua Jornada<br><em>Começa Agora</em></h2>
+  <div class="prose">
+    <p>Você chegou até aqui porque reconhece que não pode mais continuar nessa zona cinzenta de dúvida e confusão. Já percebeu que a própria força não é suficiente para desembaraçar os nós que a vida deu. Já tentou a lógica, os conselhos, os livros de autoajuda. E o peso no peito continua lá.</p>
+    <p>Essa agitação não é para te destruir. É o seu espírito gritando por uma nova forma de viver.</p>
+    <p>Misake não sabia o que ia encontrar quando saiu de casa naquela quinta-feira de manhã. Ela só sabia que não podia continuar onde estava.</p>
+    <p>Você também já sabe que não pode continuar onde está.</p>
+    <p><strong>A diferença entre você e Misake é que ela não tinha mapa. Você tem.</strong></p>
+  </div>
+  <div class="pull">
+    <p>O silêncio que você está sentindo agora não é vazio. É espaço para a próxima coisa certa. A sua jornada começa quando você decide que o peso que está carregando não é o seu destino.</p>
+  </div>
+</div>
+
+<!-- ═══════════ PRODUTO ═══════════ -->
+<section class="final-cta reveal" id="solucao">
+  <span class="kicker">O próximo passo</span>
+  <h2>A Cartilha da <em>Sabedoria Divina</em></h2>
+  <p>O mapa que Misake não tinha quando saiu. O método prático para ouvir a Deus, filtrar as vozes e decidir com paz — mesmo quando as circunstâncias não cooperam.</p>
+
+  <div class="product-box">
+    <h3>O que você vai receber</h3>
+    <p class="sub">Acesso imediato após a confirmação do pagamento</p>
+    <ul class="product-items">
+      <li>
+        <span class="icon">✦</span>
+        <div><strong>O Teste da Paz:</strong> Como identificar se a voz que você ouve é divina, emocional ou do ambiente — e nunca mais confundir alívio com direção.</div>
+      </li>
+      <li>
+        <span class="icon">✦</span>
+        <div><strong>Blindagem de Decisões:</strong> Como se proteger de influências externas, pressões sociais e vozes que não têm autoridade sobre o seu processo.</div>
+      </li>
+      <li>
+        <span class="icon">✦</span>
+        <div><strong>O Tempo de Deus:</strong> Aprenda exatamente quando acelerar, quando esperar e como reconhecer o sinal verde — sem confundir com o sinal amarelo.</div>
+      </li>
+      <li>
+        <span class="icon">✦</span>
+        <div><strong>Mapas Bíblicos:</strong> Lições de quem decidiu com sabedoria — e de quem falhou miseravelmente — para você não precisar aprender da forma mais cara.</div>
+      </li>
+      <li>
+        <span class="icon">✦</span>
+        <div><strong>Aplicações Práticas:</strong> Para situações reais — trabalho, família, saúde, relacionamentos e os momentos em que nada parece fazer sentido.</div>
+      </li>
+    </ul>
+  </div>
+
+  <a href="https://pay.hotmart.com/SEU-LINK-AQUI" class="btn-final">Quero Minha Cartilha Agora →</a>
+  <p class="guarantee">✓ Garantia incondicional de 7 dias &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; Pagamento seguro via Hotmart</p>
+</section>
+
+<footer>
+  <p>© 2026 Deus Revela o Caminho Certo · Decida com Paz</p>
+  <p>Todos os direitos reservados</p>
+  <p style="margin-top:12px;font-style:italic;color:rgba(240,232,216,.12)">"A sua jornada começa quando você decide que o peso que está carregando não é o seu destino."</p>
+</footer>
+
+<script>
+// progress bar
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  const p=(d.scrollTop||document.body.scrollTop)/(d.scrollHeight-d.clientHeight)*100;
+  document.getElementById('bar').style.width=p+'%';
+});
+// nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>60);
+});
+// reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
+},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
